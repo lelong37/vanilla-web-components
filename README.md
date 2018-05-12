@@ -1,4 +1,11 @@
-# vanilla ts-loader
+# vanilla-web-components-workshop
+
+### HTML5 Web Components Workshop ###
+
+Precursor to micro-apps with view, scope, css, js, encapsulation via Shadow DOM
+
+- Webpack 4+
+- ts-loader (Webpack TypeScript Loader)
 
 ```shell
 yarn install
@@ -9,5 +16,3 @@ yarn start
 # Run in production mode
 yarn build 
 ```
-
-To see your output simply open up the `index.html` file in your browser of choice.
