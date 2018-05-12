@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>HTML 5 Web Components</title>
+    <style>
+      p {
+        color: red;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <p>Paragraph text in the outer application.</p>
+    <div id="simple-div"></div>
+    <p>Some more paragraph text in the outer application.</p>
+    <script>
+      let $div = document.getElementById("simple-div");
+      $div.attachShadow({ mode: "open" }); // mode: "open": complete control of sub-DOM tree before & after creation
+      $div.shadowRoot.innerHTML = `
+        <style>
+          p {
+            color: blue;
+          }
+        </style>
+        <p>Paragraph text within the Shadow DOM!</p>
+      `;
+    </script>
+  </body>
+
+</html>

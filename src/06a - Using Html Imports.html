@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>HTML 5 Web Components</title>
+    <link rel="import" href="06b - Notice.html" id="notice" />
+    <style>
+
+
+    </style>
+  </head>
+
+  <body>
+    <script>
+      const $link = document.getElementById("notice");
+      const content = $link.import.querySelector(".notice-frame");
+      document.body.appendChild(content.cloneNode(true));
+    </script>
+  </body>
+
+</html>

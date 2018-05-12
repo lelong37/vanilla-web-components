@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>HTML 5 Web Components</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/document-register-element/1.8.1/document-register-element.js">/* W3C Custom Elements */</script>
+    <script>
+
+      class CustomAnchor extends HTMLAnchorElement {
+        connectedCallback() {
+          this.addEventListener("click", e => {
+            e.preventDefault();
+            const result = confirm("Are you sure?");
+            if (result) window.location.href = e.target.href;
+          });
+
+          console.log('with content: ', this.textContent);
+        }
+      }
+
+      customElements.define('custom-anchor', CustomAnchor, { extends: "a" });
+    </script>
+  </head>
+
+  <body>
+    <a is="custom-anchor" href="http://google.com">
+      Go to Google
+    </a>
+  </body>
+
+</html>

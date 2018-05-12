@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>HTML 5 Web Components</title>
+  </head>
+
+  <script>
+    class DivisionElement extends HTMLElement {
+      constructor() {
+        super();
+        console.log("My Custom Element constructed!");
+      }
+
+      connectedCallback() {
+        console.log("My Cusom Element added to DOM");
+      }
+
+      static get observedAttributes() {
+        return ["demo"];
+      }
+
+      attributeChangedCallback(name, oldValue, newValue) {
+        console.log("attribute changed!", name, oldValue, newValue);
+      }
+
+      disconnectedCallback() {
+        console.log("My Custom Element removed from the DOM!");
+      }
+
+      divideByTen(value) {
+        console.log(parseInt(value) / 10);
+      }
+    }
+
+    class MultiplyElement extends DivisionElement {
+      multiplyByTen(value) {
+        console.log(parseInt(value) * 10);
+      }
+    }
+
+    window.customElements.define("do-division", DivisionElement);
+    window.customElements.define("do-multiply", MultiplyElement);
+  </script>
+
+  <body>
+    <do-division></do-vision>
+      <do-multiply></do-multiply>
+  </body>
+
+</html>

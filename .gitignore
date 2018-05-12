@@ -1,18 +1,19 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+# Created by https://www.gitignore.io/api/visualstudiocode
 
-# Other files and folders
-.settings/
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+/dist
+/tmp
+/node_modules
+/typings
+.DS_Store
+/src/index.js
+/src/index.js.map
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+# End of https://www.gitignore.io/api/visualstudiocode
