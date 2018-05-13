@@ -2,18 +2,39 @@
 <html lang="en">
 
   <head>
-    <meta charset="UTF-8">
-    <title>HTML 5 Web Components</title>
-    <link rel="import" href="06b - Notice.html" id="notice" />
-    <style>
-    </style>
+  <meta charset="UTF-8">
+  <title>HTML 5 Web Components</title>
   </head>
 
   <body>
+    <h3>Vanilla Web Components & Custom Elements Workshop</h3>
+    <template id="list-item">
+      <li>
+        <a href="Link">LinkText</a>
+      </li>
+    </template>
+    <ul id="list"></ul>
     <script>
-      const $link = document.getElementById("notice");
-      const content = $link.import.querySelector(".notice-frame");
-      document.body.appendChild(content.cloneNode(true));
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', "links.json", true);      
+      xhr.send();
+      xhr.onreadystatechange = function processRequest(e) {
+        if(xhr.readyState == 4 && xhr.status == 200) {
+          var items = JSON.parse(xhr.responseText);
+          console.log(items);
+          const $template = document.getElementById("list-item");
+          const $list = document.getElementById("list");
+          items.forEach((link) => {
+            if(link.display == undefined || link.display != false) {            
+              const $clone = document.importNode($template.content, true);
+              let $link = $clone.querySelector("a");
+              $link.innerText = link.title;
+              $link.href = (link.url || link.title) + ".html";
+              $list.appendChild($clone);
+            }
+          });
+        }
+      }
     </script>
   </body>
 

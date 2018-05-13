@@ -1,0 +1,54 @@
+[
+  {
+    "title": "Home",
+    "url": "index",
+    "inject": "head"
+  },
+  {
+    "title": "01 - Custom Elements API and Lifecycle Callback Methods"
+  },
+  {
+    "title": "02 - Extending Custom Elements"
+  },
+  {
+    "title": "03 - Extending Native Elements"
+  },
+  {
+    "title": "04 -  Using the Shadow DOM"
+  },
+  {
+    "title": "05 - Using HTML Templates"
+  },
+  {
+    "title": "06 - Using HTML Imports",
+    "url": "06a - Using Html Imports"
+  },
+  {
+    "title": "06b - Notice",
+    "display": false
+  },
+  {
+    "title": "07 - Mehtod 1: Pure JavaScript",
+    "url": "07a - Mehtod 1: Pure JavaScript"
+  },
+  {
+    "title": "08 - Method 2: HTML Import",
+    "url": "08a - Method 2: HTML Import"
+  },
+  {
+    "title": "08b - my-component",
+    "display": false
+  },
+  {
+    "title": "09 - Custom Elements Best Practices",
+    "url": "09a - Custom Elements Best Practices"
+  },
+  {
+    "title": "10 - Web Components Attribute",
+    "url": "10a - Web Components Attribute"
+  },
+  {
+    "title": "11 - Web Components Properties",
+    "url": "11a - Web Components Properties"
+  }
+]

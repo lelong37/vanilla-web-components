@@ -3,20 +3,21 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>test</title>
+    <title>01 - Custom Elements API and Lifecycle Callback Methods</title>
     <script>
       class MyCustomElement extends HTMLElement {
         constructor() {
           super();
-          console.log("My Custom Element constructed!");
+          console.log("My Custom Element constructed!");          
         }
 
         connectedCallback() {
           console.log("My Cusom Element added to DOM");
+          this.setAttribute("innerText", "My Custom Element!");
         }
 
         static get observedAttributes() {
-          return ["demo"];
+          return ["demo", "innerText  "];
         }
 
         attributeChangedCallback(name, oldValue, newValue) {
@@ -33,10 +34,13 @@
   </head>
 
   <body>
-    <my-custom-element></my-custom-element>
+    <h3>01 - Custom Elements API and Lifecycle Callback Methods</h3>
+    <my-custom-element>My Custom Element</my-custom-element>
+    <br/>
     <script>
       let $ce = document.createElement("my-custom-element");
       setTimeout(() => {
+        $ce.innerText = "My Custom Element";
         document.body.appendChild($ce);
       }, 3000);
     </script>
