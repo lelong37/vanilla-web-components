@@ -50,5 +50,13 @@
   {
     "title": "11 - Web Components Properties",
     "url": "11a - Web Components Properties"
+  },
+  {
+    "title": "12 - Web Component Shadow DOM",
+    "url": "12a - Web Component Shadow DOM"
+  },
+  {
+    "title": "13 - Creating the Foundation of the Star Rating Web Component",
+    "url": "13a - Creating the Foundation of the Star Rating Web Component"
   }
 ]
