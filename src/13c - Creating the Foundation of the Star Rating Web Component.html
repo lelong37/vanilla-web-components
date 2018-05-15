@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Practical Guide to Vanilla Web Components</title>
+    <style>
+        html, body {
+            font-size: 1.5em;
+        }
+        /* Passing in styles from Live DOM to Shadow DOM */
+        rw-star-rating { 
+          --star-default-color: #333;
+          --star-selected-color: red;
+          --star-hover-color: blue;
+        }
+    </style>
+</head>
+<body>
+  <div id="ce-es5-shim">
+    <script>
+      debugger;
+      if (!window.customElements) {
+        var ceShimContainer = document.querySelector('#ce-es5-shim');
+        // This prevents custom-elements-es5-adapter.js from parsing or running.
+        ceShimContainer.parentElement.removeChild(ceShimContainer);
+      }
+    </script>
+    <script src="node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+  </div>
+  <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script src="custom-style-interface.min.js"></script>
+
+
+  <h3>13c - Creating the Foundation of the Star Rating Web Component w/ Polyphill e.g IE11 & Edge</h3>
+  <p>Star Rating: <rw-star-rating id="sr"></rw-star-rating></p>
+  
+  <script>
+    // Preferrered: use WebComponents.waitFor(() => { ... }) vs. WebComponentsReady event
+    // WebComponents.waitFor(async () => {
+    //   debugger;
+    //   // At this point we are guaranteed that all required polyfills have
+    //   // loaded, and can use web components API's.
+    //   // The standard pattern is to load element definitions that call
+    //   // `customElements.define` here.
+    //   // Note: returning the import's promise causes the custom elements
+    //   // polyfill to wait until all definitions are loaded and then upgrade
+    //   // the document in one batch, for better performance.
+    //   return await import("./13d - rw-star-rating.js");
+    // });      
+
+    // WebComponents.waitFor(() => {
+    //   debugger;
+    //   // At this point we are guaranteed that all required polyfills have
+    //   // loaded, and can use web components API's.
+    //   // The standard pattern is to load element definitions that call
+    //   // `customElements.define` here.
+    //   // Note: returning the import's promise causes the custom elements
+    //   // polyfill to wait until all definitions are loaded and then upgrade
+    //   // the document in one batch, for better performance.
+    //   return import("./13d - rw-star-rating.js");
+    // });      
+
+    window.addEventListener("WebComponentsReady", function () {
+      var $script = document.createElement("script");
+      $script.src = "13d - rw-star-rating.js"
+      document.head.appendChild($script);
+    });
+
+    // if (window.ShadyCSS && ShadyCSS.CustomStyleInterface) {
+    //     ShadyCSS.CustomStyleInterface.addCustomStyle(document.querySelector("style.document-style"));
+    // }
+  </script>
+</body>
+</html>
+  

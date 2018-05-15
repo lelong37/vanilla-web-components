@@ -1,35 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
+<head>
     <meta charset="UTF-8">
-    <title>HTML 5 Web Components</title>
+    <title>A Practical Guide to Vanilla Web Components</title>
     <script src="13b - rw-star-rating.js"></script>
     <style>
-      html,
-      body {
-        font-size: 1.5em;
-      }
+        html, body {
+            font-size: 1.5em;
+        }
+        /* Passing in styles from Live DOM to Shadow DOM */
+        rw-star-rating { 
+          --star-default-color: #333;
+          --star-selected-color: red;
+          --star-hover-color: blue;
+        }
     </style>
-  </head>
-
-  <body>
-    <h3>13 - Creating the Foundation of the Star Rating Web Component</h3>
-    <fieldset>
-      <legend>
-        Star Rating Foundation
-      </legend>
-    <ul>
-      <li>Custom Element outline</li>
-      <li>Shadow Root</li> 
-      <li>Initial template</li>
-      <li>Basic Styling</li>
-    </ul>
-    </fieldset>
-
-    <p>Star Rating: <rw-star-rating id="sr" disabled></rw-star-rating></p>
-  </body>
-
+</head>
+<body>
+    <p>Star Rating: <rw-star-rating id="sr"></rw-star-rating></p>
+</body>
 </html>
-
-
+  
